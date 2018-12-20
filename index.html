@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>Page not found &middot; GitHub Pages</title>
+    <title>Mckenzie Mastermind!</title>
     <style type="text/css" media="screen">
       body {
         margin: 0;
@@ -443,6 +443,16 @@
 
   <script src="./jquery-3.3.1.min.js"></script>
   <script>
+    Array.prototype.getRandomValue = function(){
+      return this[Math.floor(Math.random()*this.length)];
+    };
+    var pegColors = [
+      "rgb(71,203,143)",
+      "rgb(233,224,56)",
+      "rgb(10,61,188)",
+      "rgb(210,44,44)",
+    ];
+
     $('.peg.on').each(
       function(i,e){
         setTimeout(
@@ -453,12 +463,13 @@
                 "width": "10px",
                 "margin": "2px",
                 "border-radius": "5px",
-                "background-color": "cornflowerblue",
+                "border": "1px #000000 solid",
+                "background-color": pegColors.getRandomValue(),
               },
               2000
             )
           },
-          i*25
+          i*15
         )
       }
     );
